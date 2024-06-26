@@ -1,4 +1,7 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Définir une interface pour le type de réponse attendu
 interface WeatherResponse {
@@ -14,7 +17,7 @@ interface WeatherResponse {
     name: string;
 }
 
-const apiKey: string = ;
+const apiKey: string = process.env.API_KEY!;
 const city: string = 'Goma';
 const url: string = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
